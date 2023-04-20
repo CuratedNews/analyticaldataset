@@ -1,0 +1,386 @@
+<html lang="en" dir="ltr" data-theme="light">
+   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <title>Curated News - Tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Curated News' outrage evaluator allows users to determine news and content for emotional volatility.">
+    <meta name="keywords" content="news, content, media">
+    <meta name="copyright" content="Curated News">
+    <meta name="robots" content="index,nofollow">
+    <meta http-equiv="expires" content="302400">
+    <meta property="og:image" content="https://curatednews.xyz/static/images/homeogimage.png">
+    <link rel="stylesheet" nonce="" href="https://curatednews.xyz/static/css/style.css">
+    <link rel="stylesheet" nonce="" href="./static/css/fonts.css">
+    <link rel="stylesheet" nonce="" href="./static/css/style2.css">
+    <link rel="shortcut icon" type="image/jpg" href="https://curatednews.xyz/static/images/favicon.ico">
+    <noscript><meta http-equiv="refresh" content="1;url=https://curatednews.xyz/curatednojs"></noscript>
+   </head>
+<body>
+<div id="modal" class="modalonboard">
+    <div class="modal-info-content center longtext modalcenter">
+        <h1 id="title-modal"><i class="fa  neutralbutton" aria-hidden="true"></i> </h1>
+        <div id="message-modal" class="modal-item-big"></div>
+        <div id="previous-modal" class="modal-button-big"><img src="https://curatednews.xyz/static/images/flipiconleft.png" width="50px" height="50px"></div>
+        <div id="close-modal" class="modal-button-big"><img src="https://curatednews.xyz/static/images/closeicon.png" width="50px" height="50px"></div>
+        <div id="next-close-modal" class="modal-button-big"><img src="https://curatednews.xyz/static/images/flipiconright.png" width="50px" height="50px"></div>
+    </div>
+</div>
+<input id="sidebarmenu" type="checkbox" class="sidemenu">
+<label for="sidebarmenu" class="sidebarmenuheader">
+    <div class="sidebarmenuheadercontent">
+        <div class="sidebarmenubutton" aria-hidden="true" title="Menu"></div>
+        <div class="sidebarmenutopbutton">
+            <input id="headerbutton1" type="checkbox" class="sidebarmenutopbuttonactual">
+            <label for="headerbutton1">
+                <div class="sidebarmenutopbuttontitle sidebarmenutopbuttontitleactive"><i class="fa fa-wrench" aria-hidden="true"></i> Tools</div>
+            </label>
+            <div class="sidebarmenutopbuttoncontent">
+                <div class="sidebarmenutopbuttoncontentmenu">
+                    <p class="sidebarmenutopbuttoncontentmenuheader">Everyone should have a toolbox.</p>
+                    <div class="sidebarmenutopbuttoncontentmenuheadergrid">
+                        <a href="https://curatednews.xyz/curatedtools" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>Try our Outrage Evaluator</strong><p>Evaluate news content for emotional volatility.</p></a>
+                        <a href="https://github.com/CuratedNews" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong><i class="fa fa-heart matchcolor"></i> Open Source</strong><p>See our other open source projects.</p></a>
+                        <a href="https://github.com/CuratedNews/HeadlinesClassifier" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong>Clone this Repo</strong><p>Test our open source algorithims against top competitors.</p></a>
+                        <a href="CuratedNewsDatasetCodeBook.pdf" target="blank" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>See our Conditions</strong><p>Get details on how you can use our publicly available data.</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebarmenutopbutton">
+            <input id="headerbutton2" type="checkbox" class="sidebarmenutopbuttonactual">
+            <label for="headerbutton2">
+                <div class="sidebarmenutopbuttontitle"><i class="fa fa-user-secret" aria-hidden="true"></i> Your Privacy</div>
+            </label>
+            <div class="sidebarmenutopbuttoncontent">
+                <div class="sidebarmenutopbuttoncontentmenu">
+                    <p class="sidebarmenutopbuttoncontentmenuheader">Protect yourself.</p>
+                    <div class="sidebarmenutopbuttoncontentmenuheadergrid">
+                        <a href="https://curatednews.xyz/curatedprivacy.php" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>Check our Privacy Policy</strong><p>Get details on how we protect your privacy.</p></a>
+                        <a href="https://curatednews.xyz/curatedprivacy.php" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong>What are my rights?</strong><p>Our ecosystem wants you to know your rights.</p></a>
+                        <a href="https://curatednews.xyz/curatedprivacy.php#contactus" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong>How can I contact you?</strong><p>Our contact info is listed in our privacy policy.</p></a>
+                        <a href="https://curatednews.xyz/curatedprivacy.php" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>Are you privacy-conscious?</strong><p>Absolutely. Our service limits the kinds of data we collect to what is strictly necessary.</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebarmenutopbutton">
+            <input id="headerbutton3" type="checkbox" class="sidebarmenutopbuttonactual">
+            <label for="headerbutton3">
+                <div class="sidebarmenutopbuttontitle"><i class="fa fa-gavel" aria-hidden="true"></i> Our Terms</div>
+            </label>
+            <div class="sidebarmenutopbuttoncontent">
+                <div class="sidebarmenutopbuttoncontentmenu">
+                    <p class="sidebarmenutopbuttoncontentmenuheader">Help us help you.</p>
+                    <div class="sidebarmenutopbuttoncontentmenuheadergrid">
+                        <a href="https://curatednews.xyz/curatedterms.php" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>Check our Terms &amp; Conditions</strong><p>Get details on how we enforce our service.</p></a>
+                        <a href="https://curatednews.xyz/curatedterms.php" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong>What am I agreeing to?</strong><p>We suggest reading it all the way through.</p></a>
+                        <a href="https://curatednews.xyz/curatedterms.php#contactus" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong>How can I contact you?</strong><p>Our contact info is listed in our terms and conditions.</p></a>
+                        <a href="https://curatednews.xyz/curatedterms.php#prohibitedactivities" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>What is prohibited?</strong><p>Take a look at some prohibited activities.</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebarmenutopbutton">
+            <input id="headerbutton4" type="checkbox" class="sidebarmenutopbuttonactual">
+            <label for="headerbutton4">
+                <div class="sidebarmenutopbuttontitle"><i class="fa fa-handshake-o" aria-hidden="true"></i> Use</div>
+            </label>
+            <div class="sidebarmenutopbuttoncontent">
+                <div class="sidebarmenutopbuttoncontentmenu">
+                    <p class="sidebarmenutopbuttoncontentmenuheader">Follow the rules.</p>
+                    <div class="sidebarmenutopbuttoncontentmenuheadergrid">
+                        <a href="https://curatednews.xyz/curatedacceptableusepolicy.php" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>Acceptable use</strong><p>Learn what you can and cannot do with our service.</p></a>
+                        <a href="https://curatednews.xyz/curatedacceptableusepolicy.php#useofservices" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong>What are my obligations?</strong><p>Our ecosystem wants you to know your obligations.</p></a>
+                        <a href="https://curatednews.xyz/curatedacceptableusepolicy.php#contactus" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong>How can I contact you?</strong><p>Our contact info is listed in our acceptable use.</p></a>
+                        <a href="mailto:contactus@curatednews.xyz" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>Report a concern</strong><p>Concerned about something? Report it to us.</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebarmenutopbutton">
+            <input id="headerbutton5" type="checkbox" class="sidebarmenutopbuttonactual">
+            <label for="headerbutton5">
+                <div class="sidebarmenutopbuttontitle"><i class="fa fa-question" aria-hidden="true"></i> FAQ</div>
+            </label>
+            <div class="sidebarmenutopbuttoncontent">
+                <div class="sidebarmenutopbuttoncontentmenu">
+                    <p class="sidebarmenutopbuttoncontentmenuheader">Need some help?</p>
+                    <div class="sidebarmenutopbuttoncontentmenuheadergrid">
+                        <a href="https://curatednews.xyz/curatedfaq.php" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>Check out our FAQ</strong><p>It answers general, subscription, technical, and security-related questions for prospective users.</p></a>
+                        <a href="https://curatednews.xyz/curatedfaq.php#general#q3" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong>How does it work?</strong><p>It's complicated but we explain it simply and powerfully.</p></a>
+                        <a href="https://curatednews.xyz/curatedfaq.php#technical#q7" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong>Why does it work?</strong><p>Details matter and we get them right because we care.</p></a>
+                        <a href="https://curatednews.xyz/curatedfaq.php#general" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>What does it do?</strong><p>Use the internet as it was originally intended.</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebarmenutopbutton">
+            <input id="headerbutton6" type="checkbox" class="sidebarmenutopbuttonactual">
+            <label for="headerbutton6">
+                <div class="sidebarmenutopbuttontitle"><i class="fa fa-rocket" aria-hidden="true"></i> Download</div>
+            </label>
+            <div class="sidebarmenutopbuttoncontent">
+                <div class="sidebarmenutopbuttoncontentmenu">
+                    <p class="sidebarmenutopbuttoncontentmenuheader">Download our app.</p>
+                    <div class="sidebarmenutopbuttoncontentmenuheadergrid">
+                        <a href="https://curatednews.xyz/index.html#downloadbox" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>Pick a platform</strong><p>We are developing applications on all platforms.</p></a>
+                        <a href="https://curatednews.xyz/index.html#downloadbox" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong>Desktop</strong><p>Our desktop apps are still under development but we hope to support them soon.</p></a>
+                        <a href="https://curatednews.xyz/index.html#downloadbox" class="sidebarmenutopbuttoncontentmenuheadergrid-item"><strong>Mobile</strong><p>Our mobile app is free with no accounts or trial periods and periodic updates.</p></a>
+                        <a href="https://curatednews.xyz/curatedsubscribe.php?=subscribe" class="sidebarmenutopbuttoncontentmenuheadergrid-item grid-item-fullsize"><strong>Subscribe for updates</strong><p>Get updates on our platforms via email.</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</label>
+<div class="sidebarmenucontent">
+    <div class="sidebarmenucontentmenu">
+        <div class="sidebarmenucontentmenugrid">
+            <div class="sidebarmenucontentmenugrid-item sidebarmenucontentmenugrid-item-menu">
+                <h2 class="mediumlowremoveit2">No fakes.</h2>
+                <h2 class="blue_text_animated marginbottom">All real.</h2>
+                <a href="https://curatednews.xyz" title="Download"><div class="sidebarmenucontentmenugrid-item sidebarmenucontentmenugrid-item-marginbottom"><i class="fa fa-home plusalt" aria-hidden="true"></i> Download</div></a>
+                <a href="https://curatednews.xyz/curatedheadlines.php" title="News panel"><div class="sidebarmenucontentmenugrid-item sidebarmenucontentmenugrid-item-marginbottom"><i class="fa fa-newspaper-o plusalt" aria-hidden="true"></i> News panel</div></a>
+                <a href="https://curatednews.xyz/curatedtools.php" title="Toolbox"><div class="sidebarmenucontentmenugrid-item sidebarmenucontentmenugrid-item-marginbottom"><i class="fa fa-wrench plusalt" aria-hidden="true"></i> Toolbox</div></a>
+                <br>
+            </div>
+            <div class="sidebarmenucontentmenugrid-item sidebarmenucontentmenugrid-item-menu">
+                <a href="curatedlogin" title="Login to your account"><img id="accountlogin" src="https://curatednews.xyz/static/images/stockavatar.png" alt="" class="accountlogin"></a>
+                <div class="mediumlowremoveit2">
+                    <h1><img src="https://curatednews.xyz/static/images/logo.png"> Curated News</h1>
+                </div>
+                <br>
+                <div id="notificationsheader" title="Check out what's new and upcoming with our platform"><h3>Notifications <i id="notificationsicon" class="fa fa-bell-o" aria-hidden="true"></i></h3></div>
+                <div id="notifications">
+		</div>
+                <div class="notificationsstatictext">News without manipulation.</div>
+            </div>
+            <div class="sidebarmenucontentmenugrid-item sidebarmenucontentmenugrid-item-menu mediumlowremoveit2">
+                <a href="https://curatednews.xyz/curatedsubscribe.php" title="Subscribe to our newsletter"><div class="sidebarmenucontentmenugrid-item newsletter"> <i class="fa fa-paper-plane" aria-hidden="true"></i></div></a>
+                <a href="mailto:contactus@curatednews.xyz" title="Report a bug to us"><div class="sidebarmenucontentmenugrid-item reportabug"> <i class="fa fa-bug preferredbadge" aria-hidden="true"></i></div></a>
+                <a href="https://securityheaders.com/?q=curatednews.xyz&amp;hide=on&amp;followRedirects=on" title="Here's how others rate our security"><div class="sidebarmenucontentmenugrid-item securitytransparency"> <i class="fa fa-shield" aria-hidden="true"></i><p class="notice mediumlowremoveit2">Independent proof of our security...</p></div></a>
+                <a title="We limit tracking"><div class="sidebarmenucontentmenugrid-item cookietransparency"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i><div id="transparency"><p class="notice">We only use strictly necessary cookies.</p></div></div></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sidebar">
+      <ul class="nav-links">
+        <li>
+          <a href="index.html" title="Home">
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="curatedheadlines" title="News">
+            <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="curatedtools" class="active" title="Tools">
+            <i class="fa fa-wrench" aria-hidden="true"></i>
+          </a>
+        </li>
+        <div id="sidebarbottommenu" class="sidebarbottommenu">
+            <div id="social" class="row social" align="center">
+                <a target="blank" href="https://github.com/CuratedNews" title="Our GitHub"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+                <a target="blank" href="https://www.facebook.com/theofficialcuratednews/" title="Our Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a target="blank" href="https://www.linkedin.com/company/curatednews" title="Our LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a target="blank" href="https://t.me/Curated_News" title="Our Telegram"><i class="fa fa-telegram telegram" aria-hidden="true"></i></a>
+                <a target="blank" href="https://curatednews.xyz/curatedupdates.rss" title="Our RSS"><i class="fa fa-rss" aria-hidden="true"></i></a>
+            </div>
+        </div>
+      </ul>
+  </div>
+<input type="checkbox" id="darkmode">
+<section id="section" class="home-section removehighlight">
+    <div class="panel"></div>
+    <nav>
+      <div>
+            <input id="mobilesidemenu" type="checkbox" class="mobilemenu">
+            <label for="mobilesidemenu" class="sidebar-button">
+                <img id="logoimage" src="https://curatednews.xyz/static/images/logo.png" alt="" class="logofluid bx bx-menu">
+                <img id="mobilesidemenuimage" src="https://curatednews.xyz/static/images/mobilemenu.png" alt="" class="logofluid bx bx-menu">
+                <span class="logomenu logomenu2">Classifier</span>
+            </label>
+            <div class="mobilemenucontent">
+                <div class="mobilemenutop">
+                    <div class="scrollmenu">
+                        <a href="https://curatednews.xyz"><i class="fa fa-star" aria-hidden="true"></i> Download Our App</a>
+                        <a href="https://curatednews.xyz/curatedpricing.php"><i class="fa fa-certificate" aria-hidden="true"></i> Prices</a>
+                        <a href="https://curatednews.xyz/curatedfaq.php#general#q3"><i class="fa fa-info-circle" aria-hidden="true"></i> How does Curated News work?</a>
+                        <a href="https://curatednews.xyz/curatedfaq.php"><i class="fa fa-info-circle" aria-hidden="true"></i> Want to know more?</a>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="sidemenulogo blacktext grid-item-fullsize"><img src="https://curatednews.xyz/static/images/logo.png"><strong>Curated News</strong><a href="https://curatednews.xyz/curatedlogin.php"><img class="avatarlogin" src="https://curatednews.xyz/static/images/stockavatar.png" alt=""></a></div>
+                    <div class="mobilepptc grid-item-fullsize">
+                        <a href="curatedprivacy" class="mobilepptcitem"><i class="fa fa-user-secret" aria-hidden="true"></i> Privacy</a>
+                        <a href="curatedterms" class="mobilepptcitem"><i class="fa fa-gavel" aria-hidden="true"></i> Terms &amp; Conditions</a>
+                    </div>
+                    <div class="grid-item grid-item-fullsize"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home<p class="grid-explanation-text">Read manipulation-proof news for FREE.</p></a></div>
+                    <div class="grid-item"><a href="https://curatednews.xyz/curatedheadlines.php"><i class="fa fa-newspaper-o" aria-hidden="true"></i> News   <p class="grid-explanation-text">Read from our manipulation-proof public news database.</p></a></div>
+                    <div class="grid-item"><a href="https://curatednews.xyz/curatedtools.php"><i class="fa fa-wrench" aria-hidden="true"></i> Toolbox<p class="grid-explanation-text">Try our outrage evaluator and the other tools in our public toolbox!</p></a></div>
+                    <div class="grid-item grid-item-fullsize"><a href="https://curatednews.xyz/curatedfaq.php"><i class="fa fa-question" aria-hidden="true"></i> Questions<p class="grid-explanation-text">View some Frequently Asked Questions (FAQs).</p></a></div>
+                    <div class="grid-item grid-item-fullsize"><a href="https://curatednews.xyz/curatedsubscribe.php?=subscribe"><i class="fa fa-envelope" aria-hidden="true"></i> Subscribe<p class="grid-explanation-text">Get information about the platform via email.</p></a></div>
+                    <div class="grid-item-fullsize center sidemenusocial">
+                        <a target="blank" href="https://www.facebook.com/theofficialcuratednews/" title="Our Facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
+                        <a target="blank" href="https://www.linkedin.com/company/curatednews" title="Our LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <div class="loginsignup slogan">
+	      <a href="https://curatednews.xyz/curatedlogin" class="login-button sloganremoveit">Login</a>
+        <a href="https://curatednews.xyz/curatedpricing.php" class="pricing-signup-button sloganremoveit">Signup</a>
+      </div>
+    </nav>
+    <div id="home-content" class="home-content">
+    <div id="seeforyourself" class="main-box">
+          <div class="big-box box big-box-classifier">
+              <h1>Search our dataset.</h1>
+              <div class="analyticssearch">
+                <form id="searchbar" action="?search=true" method="post" class="search-box">
+                  <input id="searchactual" type="text" placeholder="Enter a query..." required>
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+              <div id="introtext" class="faqintrotext mobileremoveit">Get news in our dataset between September 2020 to August 2021.</div>
+              <br>
+              <span id="clearall" class="clearfilter">Clear Results <i class="fa fa-times-circle" aria-hidden="true"></i></span>
+              <br><br>
+              <div id="loader">
+                  <div class="dot1"></div>
+                  <div class="dot2"></div>
+                  <div class="dot3"></div>
+              </div>
+              <div id="searchresults"></div>
+          </div>
+    </div>
+    <div class="main-box removemain mobileremoveit mediumlowremoveit">
+        <div class="small-box box small-box-left mediumlowremoveit sidebox longtext chartmod"><h2>Total volatility</h2><p>Our news ecosystem is mostly negative and this increases its volatility.</p><div id="chart1"></div><div id="chart1text"><div class="box-topic negativeactive">Negative <strong id="negative"></strong></div><div class="box-topic positiveactive">Positive <strong id="positive"></strong></div><div class="box-topic neutralactive">Neutral <strong id="neutral"></strong></div></div><br><p>See how we <a href="https://curatednews.github.io/analyticaldataset#calculation-of-overall-sentiment-score" target="_blank">calculate</a> these scores and check our <a href="CuratedNewsDatasetCodeBook.pdf" target="_blank">codebook</a> for more information.</p></div>
+        <div class="big-box box big-box-headlines removeshadows longtext chartmod">
+            <div id="chart2"></div>
+            <input id="explorefunfact" type="checkbox" class="slideout">
+            <label for="explorefunfact" class="explanatoryboxbutton calltoaction">Explore</label>
+            <div class="slideoutcontent longtext">
+                <p>News volatility follows news article volume. As news is produced at higher levels, emotional volatility becomes heightened and the gap between <strong class="negativebutton">Negative</strong> and <strong class="positivebutton">Positive</strong> stories increases.<br><br>This type of behavior is present in systems that are easily manipulated, even when there are tight controls and regulations in place, including the stock market. In fact, this phenomenon partially mirrors something in market manipulation called <a href="https://en.wikipedia.org/wiki/Pump_and_dump" target="_blank">the "pump-and-dump" scheme</a>.</p>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="bigboxaltfulltransparent">
+      <div class="marginrightleft">
+          <h1 class="blue_text_animated faqheader">Frequently asked questions</h1>
+          <div class="faq-question">
+              <input id="q1" type="checkbox" class="panel-faq">
+              <label for="q1" class="panel-title-faq faqsubtitle">What makes this dataset compelling? <i class="fa fa-caret-down plus" aria-hidden="true"></i></label>
+              <div class="panel-content-faq">We do small data. Small, representative data is just as effective as big, representative data. With small data, you have to be focused because it requires a solid sampling methodology, consistent operationalization, and strong data pipelines. This dataset follows all the best practices and gives you powerful insights into our news media ecosystem.<br><br></div>
+          </div>
+          <div class="faq-question">
+              <input id="q2" type="checkbox" class="panel-faq">
+              <label for="q2" class="panel-title-faq faqsubtitle">Are you going to make new waves for this dataset? <i class="fa fa-caret-down plus" aria-hidden="true"></i></label>
+              <div class="panel-content-faq">Yes. A wave just means additional data to the dataset. We are working to release our subscription plan and this has taken priority.<br><br></div>
+          </div>
+          <div class="faq-question">
+              <input id="q3" type="checkbox" class="panel-faq">
+              <label for="q3" class="panel-title-faq faqsubtitle">Do you have any other publicly available tools? <i class="fa fa-caret-down plus" aria-hidden="true"></i></label>
+              <div class="panel-content-faq">Of course! Our public <a href="https://curatednews.xyz/curatedtools" class="regular_btn">outrage evaluator</a> analyzes news articles for emotional context, giving users a volatility baseline. We think it should be used to determine if a journalist is unwittingly caught up in their own emotions, as this would compromise their ability to convey important news-related information.<br><br></div>
+          </div>
+          <a href="https://curatednews.xyz/curatedfaq.php" class="regular_btn_allpurpose floatleft">More questions?</a>
+          <br>
+      </div>
+    </div>
+    <div class="main-box removemain mobileremoveit mediumlowremoveit">
+      <div class="big-box box big-box-headlines removeshadows">
+          <h1>We do small data.<a href="#top" id="demoit"><i class="fa fa-external-link" aria-hidden="true"></i></a></h1>
+          <div class="faqintrotext">Our open source dataset focuses on news headlines.</div>
+          <br>
+      </div>
+      <div class="small-box box small-box-right mobileremoveit">
+          <p class="robototextbigleft">Start exploring our dataset.</p>
+          <br>
+          <p class="robototext"><strong>Did you know</strong> news headlines are some of the most widely consumed pieces of content on the internet?</p>
+          <br>
+          <a href="https://curatednews.xyz/static/downloads/CuratedNewsDataset.zip" class="calltoaction floatleft">Download</a>
+          <a href="CuratedNewsDatasetCodeBook.pdf" class="calltoaction floatleft mediumlowremoveit2" target="_blank">Codebook</a>
+          <br>
+      </div>
+    </div>
+    <div class="main-box removemain mobileremoveit mediumlowremoveit">
+      <div class="big-box box big-box-headlines removeshadows">
+          <h1>Everyone should have a toolbox.</h1>
+          <div class="faqintrotext">Signup and get yours today.</div>
+          <div class="marginbottom">
+              <a href="https://curatednews.xyz/curatedpricing.php" class="signupcalltoaction">Signup</a>
+          </div>
+          <br>
+      </div>
+    </div>
+    </div>
+    <div class="bigboxaltfullbackground mobileonlysmall">
+      <div class="marginrightleft margintop marginbottom">
+          <br>
+          <h1>Everyone should have a toolbox.</h1>
+          <a href="https://curatednews.xyz/curatedpricing.php" class="regular_btn_allpurpose">Get yours today</a>
+          <br><br>
+          <h2>Analyze content.<br>Gain clarity.<br>Make better decisions.<br>Period.</h2>
+          <br>
+      </div>
+    </div>
+    <footer>
+      <a href="#top" class="scrollmod2 scrollmodfooter"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+      <div class="footerlogo"><img src="https://curatednews.xyz/static/images/logo.png"><strong>Curated News</strong></div>
+      <div class="footertext">News without manipulation</div>
+      <div id="xscrollcontainer" class="xscrollcontainer">
+          <div class="robototextbigleft">Download our application</div>
+          <div class="xscrollchild">
+              <style nonce="">
+                  .iosdownload {background-image: url('https://curatednews.xyz/static/images/iosbadgelight.svg');background-size: contain;background-repeat: no-repeat;background-position: center;}
+                  .androiddownload {background-image: url('https://curatednews.xyz/static/images/androidbadge.svg');background-size: contain;background-repeat: no-repeat;background-position: center;}
+                  .kindledownload {background-image: url('https://curatednews.xyz/static/images/kindlebadgelight.svg');background-size: contain;background-repeat: no-repeat;background-position: center;}
+                  .macdownload {background-image: url('https://curatednews.xyz/static/images/macosbadgelight.svg');background-size: contain;background-repeat: no-repeat;background-position: center;}
+                  .windowsdownload {background-image: url('https://curatednews.xyz/static/images/windowsbadgelight.svg');background-size: contain;background-repeat: no-repeat;background-position: center;}
+                  .linuxdownload {background-image: url('https://curatednews.xyz/static/images/linuxbadge.svg');background-size: contain;background-repeat: no-repeat;background-position: center;}
+              </style>
+              <a href="https://apps.apple.com/us/app/curated-news/id1592149063"><div class="xscrollfooteritem iosdownload"></div></a>
+              <a href="https://play.google.com/store/apps/details?id=xyz.curatednews.curatednews"><div class="xscrollfooteritem androiddownload"></div></a>
+              <a href="https://www.amazon.com/dp/B0B7Q6FVMH/ref=sr_1_2?qid=1661187423&amp;refinements=p_4%3ACurated+News"><div class="xscrollfooteritem kindledownload"></div></a>
+              <a href="https://curatednews.xyz/curatedsubscribe?=macos"><div class="xscrollfooteritem macdownload"></div></a>
+              <a href="https://curatednews.xyz/curatedsubscribe?=windows"><div class="xscrollfooteritem windowsdownload"></div></a>
+              <a href="https://curatednews.xyz/curatedsubscribe?=linux"><div class="xscrollfooteritem linuxdownload"></div></a>
+          </div>
+      </div>
+      <div class="footersocial">
+          <a target="blank" href="https://github.com/CuratedNews" title="Our GitHub"><i class="fa fa-github-alt" aria-hidden="true"></i> GitHub</a>
+          <a target="blank" href="https://www.facebook.com/theofficialcuratednews/" title="Our Facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
+          <a target="blank" href="https://www.linkedin.com/company/curatednews" title="Our LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <a target="blank" href="https://t.me/Curated_News" title="Our Telegram"><i class="fa fa-telegram telegram" aria-hidden="true"></i> Telegram</a>
+          <a target="blank" href="https://curatednews.xyz/curatedupdates.rss" title="Our RSS"><i class="fa fa-rss" aria-hidden="true"></i></a>
+      </div>
+      <div class="footerlegal">
+          <a href="curatedprivacy"><i class="fa fa-user-secret" aria-hidden="true"></i> Privacy</a>
+          <a href="curatedterms"><i class="fa fa-gavel" aria-hidden="true"></i> Terms &amp; Conditions</a>
+      </div>
+      <div class="copyright">
+          <i class="fa fa-copyright" aria-hidden="true"></i> Curated News
+      </div>
+    </footer>
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="scrollprogressbar"></div>
+    </div>
+    <div id="clearfilter" class="clearfilterscroll">
+        <a href="#top" class="clearfilter mobileremoveit">To Top <i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+        <span id="clearall2" href="index.html" class="clearfilter">Clear Results <i class="fa fa-times-circle" aria-hidden="true"></i></span>
+    </div>
+  </section>
+</body>
+<script src="./static/data/CuratedNewsDatasetWave1.js"></script>
+<script src="./static/js/apexcharts.js"></script>
+<script src="./static/js/analytics.js"></script>
+<script src="./static/js/darkmode.js"></script>
+<script src="https://curatednews.xyz/static/js/scrollbar.js"></script>
+<script src="https://curatednews.xyz/static/js/security.js"></script>
+<script src="https://curatednews.xyz/static/js/notifications.js"></script>
+<script src="https://curatednews.xyz/static/js/loader.js"></script>
+</html>
