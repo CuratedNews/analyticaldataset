@@ -9,7 +9,6 @@ searchbar.addEventListener("submit", function(e) {
     searchresults.innerHTML = "";
     searchcount = 0;
     searchnocount = 0;
-    console.log(searchcount);
     let searchactual = document.getElementById("searchactual").value;
     if (searchactual.length < 4){
         introtext.innerHTML = "Query isn't long enough.";
@@ -24,9 +23,13 @@ searchbar.addEventListener("submit", function(e) {
         let importantfind = "";
         const title = item["title"];
         const link = item["link"];
-        const date = item["date"];
-        var newdate = new Date(date);
-        newdate = newdate.toDateString();
+        let date = item["date"];
+        date = date.split(" ");
+        date = date[0];
+        const newdate = new Date(date);
+        let dateactual = newdate.toUTCString();
+        dateactual = dateactual.split(" ");
+        dateactual = `${dateactual[0]} ${dateactual[1]} ${dateactual[2]} ${dateactual[3]}`;
         const titlesentimentoverall = item["titlesentimentoverall"];
         const source = item["Source"];
         const topic = item["Topic"];
@@ -54,25 +57,27 @@ searchbar.addEventListener("submit", function(e) {
             } else if (leaning.includes("Unknown")){
                 leaningclass = "unknownidmod";
             }
-            var outof = (searchnocount/total)*100;
-            searchresults.innerHTML += `<div class='newscardview'><div class="evaluation ${emotionclass}"><span id="evaluation${searchcount}">${titlesentimentoverall}</span></div><div class='post'><div class='post-head newscardtitle resizeallfeature'><span class="pubdate">${newdate}</span><h2 class='resizeallfeature textoverpicture'>${title}</h2><button id="modal-open${searchcount}" name="${source}" class="readmore_btn">${source}</button><a id="topic${searchcount}" class="regular_btn2 removeallfeature">${topic}</a><a id="leaning${searchcount}" class="regular_btn2 removeallfeature ${leaningclass}">${leaning}</a><a href='${link}' target='_blank' class='readmore_btn'>Read more</a>`;
+            var outof = (searchnocount/62899)*100;
+            searchresults.innerHTML += `<div class='newscardview'><div class="evaluation ${emotionclass}"><span id="evaluation${searchcount}">${titlesentimentoverall}</span></div><div class='post'><div class='post-head newscardtitle resizeallfeature'><span class="pubdate">${dateactual}</span><h2 class='resizeallfeature textoverpicture'>${title}</h2><a name="${source}" class="regular_btn2">${source}</a><a id="topic${searchcount}" class="regular_btn2 removeallfeature">${topic}</a><a id="leaning${searchcount}" class="regular_btn2 removeallfeature ${leaningclass}">${leaning}</a><a href='${link}' target='_blank' class='readmore_btn'>Read more</a>`;
             if (outof < 2.5){
                 importantfind = "We were able to produce these results with less than 2.5% of our dataset. This search keyword is particularly important. Great find!";
-            } else if (outof > 15){
+            } else if (outof > 15 && outof < 90){
                 importantfind = "This search keyword isn't mentioned a lot in our dataset.";
             } else if (outof > 90){
-                importantfind = "This search keyword isn't mentioned a lot in our dataset but its rarity leads us to believe you've stumbled onto something.";
+                importantfind = "This search keyword isn't mentioned a lot in our dataset but the rarity of this result leads us to believe you've stumbled onto something. We just can't tell you what.";
             }
-            introtext.innerHTML = `Here's a random sample from your search.<br><br><div id="factsandfiguresnotice" class="factsandfiguresnotice">We found these results after going through ${searchnocount} of ${total} data points, which is ~${outof.toFixed(2)}% of all available data in our dataset. ${importantfind}</div>`;
+            introtext.innerHTML = `Here's a random sample from your search.<br><br><div id="factsandfiguresnotice" class="factsandfiguresnotice">We found these results after going through ${searchnocount} of 62899 data points, which is ~${outof.toFixed(2)}% of all available data in our dataset. ${importantfind}</div>`;
         } else {
             searchnocount++;
         }
-        /*const date = item["date"];
-        const titlesentimentoverall = item["titlesentimentoverall"];
-        const newdate = new Date(date);
-        const month = newdate.getMonth();*/
     });
 })
+
+/*
+##COMMENT STARTS##
+*Programmatic counting of dataset variable counts were removed to increase page-load speeds.
+*The counts were hardcoded into their respective inputs.
+*This code was left as a code comment for re-use in the future.
 
 let septembercount = 0;
 let octobercount = 0;
@@ -155,158 +160,6 @@ var negative = (overallnegativecount/total)*100;
 document.getElementById("negative").innerText = `${negative.toFixed(0)}%`;
 var neutral = (overallneutral/total)*100;
 document.getElementById("neutral").innerText = `${neutral.toFixed(0)}%`;
-
-//Polar chart - chart1
-var chart1options = {
-    colors: ['#3c9d4e', '#e4bf58', '#4174c9'],
-    series: [overallpositivecount, overallnegativecount, overallneutral],
-    chart: {
-        type: 'polarArea',
-    },
-    stroke: {
-        colors: ['#fff']
-    },
-    fill: {
-        opacity: 1
-    },
-    labels: ['Positive','Negative','Neutral'
-    ],
-    legend: {
-        position: 'bottom',
-    },
-    responsive: [{
-        breakpoint: 480,
-        options: {
-            chart: {
-                width: 200
-            },
-            legend: {
-                position: 'bottom'
-            }
-        }
-    }]
-};
-
-var chart = new ApexCharts(document.querySelector("#chart1"), chart1options);
-chart.render();
-
-//Mixed chart - chart2
-var chart2options = {
-    colors: ['#000', '#e4bf58', '#3c9d4e', '#4174c9'],
-    series: [{
-        name: 'Total',
-        type: 'area',
-        data: [septembercount, octobercount, novembercount, decembercount, januarycount, februarycount, marchcount, aprilcount, maycount, junecount, julycount, augustcount]
-    }, {
-        name: 'Negative',
-        type: 'area',
-        data: [septembernegativecount, octobernegativecount, novembernegativecount, decembernegativecount, januarynegativecount, februarynegativecount, marchnegativecount, aprilnegativecount, maynegativecount, junenegativecount, julynegativecount, augustnegativecount]
-    } , {
-        name: 'Positive',
-        type: 'area',
-        data: [septemberpositivecount, octoberpositivecount, novemberpositivecount, decemberpositivecount, januarypositivecount, februarypositivecount, marchpositivecount, aprilpositivecount, maypositivecount, junepositivecount, julypositivecount, augustpositivecount]
-    } , {
-        name: 'Neutral',
-        type: 'area',
-        data: [septemberneutralcount, octoberneutralcount, novemberneutralcount, decemberneutralcount, januaryneutralcount, februaryneutralcount, marchneutralcount, aprilneutralcount, mayneutralcount, juneneutralcount, julyneutralcount, augustneutralcount]
-    }],
-    chart: {
-        height: 350,
-        type: 'line',
-        stacked: false,
-    },
-    title: {text: `Headlines volatility`,align: 'left',margin: 10,offsetX: 0,offsetY: 0,floating: false,style: {fontSize: '16px',fontWeight: 'bold',fontFamily: 'Poppins',color:  '#000'}},
-    stroke: {
-        width: [0, 2, 5],
-        curve: 'smooth'
-    },
-    plotOptions: {
-        bar: {
-            columnWidth: '50%'
-        }
-    },
-
-    fill: {
-        opacity: [1, 1, 1, 1],
-        gradient: {
-            inverseColors: false,
-            shade: 'light',
-            type: "vertical",
-            opacityFrom: 0.85,
-            opacityTo: 0.55,
-            stops: [0, 100, 100, 100]
-        }
-    },
-    labels: ['09/01/2020', '10/01/2020', '11/01/2020', '12/01/2020', '01/01/2021', '02/01/2021', '03/01/2021',
-        '04/01/2021', '05/01/2021', '06/01/2021', '07/01/2021', '08/01/2021'
-    ],
-    markers: {
-        size: 0
-    },
-    xaxis: {
-        title: {
-            text: ' ',
-        },
-        type: 'datetime'
-    },
-    yaxis: {
-        title: {
-            text: 'Articles',
-        },
-        min: 0
-    },
-    tooltip: {
-        shared: true,
-        intersect: false,
-        y: {
-            formatter: function (y) {
-                if (typeof y !== "undefined") {
-                    return y.toFixed(0) + " articles";
-                }
-                return y;
-
-            }
-        }
-    }
-};
-
-var chart = new ApexCharts(document.querySelector("#chart2"), chart2options);
-chart.render();
-
-window.onscroll = function() {scrollFunction()};
-let mybutton = document.getElementById("clearfilter");
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "inline-block";
-    } else {
-        mybutton.style.display = "none";
-    }
-}
-
-let clearall = document.getElementById("clearall");
-clearall.addEventListener("click", function(evnt){
-    searchresults.innerHTML = "";
-    document.getElementById('introtext').innerText = "Make another search.";
-    if (document.getElementById('factsandfiguresnotice') !== null){
-        document.getElementById('factsandfiguresnotice').style.display = "none";
-    }
-    setTimeout(scrollTop, 200);
-});
-
-let clearall2 = document.getElementById("clearall2");
-clearall2.addEventListener("click", function(evnt){
-    searchresults.innerHTML = "";
-    document.getElementById('introtext').innerText = "Make another search.";
-    if (document.getElementById('factsandfiguresnotice') !== null){
-        document.getElementById('factsandfiguresnotice').style.display = "none";
-    }
-    setTimeout(scrollTop, 200);
-});
-
-function scrollTop(){
-    window.location.replace("#top");
-}
 
 function calculateMonthlyTotals(month, titlesentimentoverall){
     if (month === 8){
@@ -454,6 +307,161 @@ function calculateMonthlyTotals(month, titlesentimentoverall){
             augustneutralcount++;
         }
     }
+}
+
+##COMMENT ENDS##
+*/
+
+//Polar chart - chart1
+var chart1options = {
+    colors: ['#3c9d4e', '#e4bf58', '#4174c9'],
+    series: [22358, 28817, 11724],
+    chart: {
+        type: 'polarArea',
+    },
+    stroke: {
+        colors: ['#fff']
+    },
+    fill: {
+        opacity: 1
+    },
+    labels: ['Positive','Negative','Neutral'
+    ],
+    legend: {
+        position: 'bottom',
+    },
+    responsive: [{
+        breakpoint: 480,
+        options: {
+            chart: {
+                width: 200
+            },
+            legend: {
+                position: 'bottom'
+            }
+        }
+    }]
+};
+
+var chart = new ApexCharts(document.querySelector("#chart1"), chart1options);
+chart.render();
+
+//Mixed chart - chart2
+var chart2options = {
+    colors: ['#000', '#e4bf58', '#3c9d4e', '#4174c9'],
+    series: [{
+        name: 'Total',
+        type: 'area',
+        data: [3123, 5946, 6015, 5786, 6249, 5019, 5436, 5733, 5615, 5172, 5547, 3258]
+    }, {
+        name: 'Negative',
+        type: 'area',
+        data: [1296, 2775, 2627, 2524, 2925, 2356, 2500, 2673, 2648, 2371, 2587, 1535]
+    } , {
+        name: 'Positive',
+        type: 'area',
+        data: [1230, 2181, 2312, 2111, 2198, 1727, 1855, 1980, 1942, 1825, 1888, 1109]
+    } , {
+        name: 'Neutral',
+        type: 'area',
+        data: [597, 990, 1076, 1151, 1126, 936, 1081, 1080, 1025, 976, 1072, 614]
+    }],
+    chart: {
+        height: 350,
+        type: 'line',
+        stacked: false,
+    },
+    title: {text: `Headlines volatility`,align: 'left',margin: 10,offsetX: 0,offsetY: 0,floating: false,style: {fontSize: '16px',fontWeight: 'bold',fontFamily: 'Poppins',color:  '#000'}},
+    stroke: {
+        width: [0, 2, 5],
+        curve: 'smooth'
+    },
+    plotOptions: {
+        bar: {
+            columnWidth: '50%'
+        }
+    },
+
+    fill: {
+        opacity: [1, 1, 1, 1],
+        gradient: {
+            inverseColors: false,
+            shade: 'light',
+            type: "vertical",
+            opacityFrom: 0.85,
+            opacityTo: 0.55,
+            stops: [0, 100, 100, 100]
+        }
+    },
+    labels: ['09/01/2020', '10/01/2020', '11/01/2020', '12/01/2020', '01/01/2021', '02/01/2021', '03/01/2021',
+        '04/01/2021', '05/01/2021', '06/01/2021', '07/01/2021', '08/01/2021'
+    ],
+    markers: {
+        size: 0
+    },
+    xaxis: {
+        title: {
+            text: ' ',
+        },
+        type: 'datetime'
+    },
+    yaxis: {
+        title: {
+            text: 'Articles',
+        },
+        min: 0
+    },
+    tooltip: {
+        shared: true,
+        intersect: false,
+        y: {
+            formatter: function (y) {
+                if (typeof y !== "undefined") {
+                    return y.toFixed(0) + " articles";
+                }
+                return y;
+
+            }
+        }
+    }
+};
+
+var chart = new ApexCharts(document.querySelector("#chart2"), chart2options);
+chart.render();
+
+window.onscroll = function() {scrollFunction()};
+let mybutton = document.getElementById("clearfilter");
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "inline-block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+let clearall = document.getElementById("clearall");
+clearall.addEventListener("click", function(evnt){
+    searchresults.innerHTML = "";
+    document.getElementById('introtext').innerText = "Make another search.";
+    if (document.getElementById('factsandfiguresnotice') !== null){
+        document.getElementById('factsandfiguresnotice').style.display = "none";
+    }
+    setTimeout(scrollTop, 200);
+});
+
+let clearall2 = document.getElementById("clearall2");
+clearall2.addEventListener("click", function(evnt){
+    searchresults.innerHTML = "";
+    document.getElementById('introtext').innerText = "Make another search.";
+    if (document.getElementById('factsandfiguresnotice') !== null){
+        document.getElementById('factsandfiguresnotice').style.display = "none";
+    }
+    setTimeout(scrollTop, 200);
+});
+
+function scrollTop(){
+    window.location.replace("#top");
 }
 
 function randomize(values) {

@@ -17,7 +17,7 @@ Our JSON dataset is available for testing purposes only [https://raw.githubuserc
  "date": "2020-09-24 00:00:00 UTC",
 ```
 
-### word count, [sentimentr score](https://github.com/trinker/sentimentr) (whole text), & [overall sentiment of article headline](https://curatednews.github.io/analyticaldataset#calculation-of-overall-sentiment-score)
+### word count, [sentimentr score](https://github.com/trinker/sentimentr) (whole text), & [overall sentiment of article headline](https://github.com/CuratedNews/analyticaldataset#calculation-of-overall-sentiment-score)
 ```
  "titlewordcount": 9,
  "titlesentiment": "0.333333333333333",
@@ -53,8 +53,8 @@ Our JSON dataset is available for testing purposes only [https://raw.githubuserc
 - [Our codebook](https://curatednews.github.io/analyticaldataset/CuratedNewsDatasetCodeBook.pdf)
 
 ## How it works?
-Check our [demo](https://curatednews.github.io/analyticaldataset/) for a hands-on with explanations
-We've made a headlines classifier with this dataset. Check out the [demo](https://curatednews.github.io/headlinesclassifier/)
+- Check our [interactive search page/demo](https://curatednews.github.io/analyticaldataset/) for a hands-on with explanations of our analytical dataset
+- We've made a headlines textual classifier with this dataset. Check out the [demo](https://curatednews.github.io/headlinesclassifier/).
 
 ## Contribute
 Want to contribute? You can add unique categorical variables to the current data. Send us a pull request.

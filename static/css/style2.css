@@ -152,6 +152,27 @@
 #clearall, #clearall2{
     cursor: pointer;
 }
+.chartreplacement{
+    margin-bottom: 7px;
+    margin-top: 7px;
+    position: relative;
+    width: fit-content;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 0;
+    border: 0;
+}
+.chartreplacement strong{
+    margin-left: 5px;
+    position: relative;
+    width: fit-content;
+    height: auto;
+    background-color: #202020;
+    border-radius: 50%;
+    padding: 7px 3.75px;
+    text-align: right;
+}
 @media (max-width: 1280px) {
     #chart1{
         display: none;
